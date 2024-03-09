@@ -8,11 +8,9 @@ if(process.env.NODE_ENV === "production"){
     let globalWithPrisma = global as typeof globalThis & {
         prisma: PrismaClient;
     }
-
     if(!globalWithPrisma.prisma){
         globalWithPrisma.prisma = new PrismaClient();
     }
-
     prisma = globalWithPrisma.prisma;
 }
 
